@@ -1,0 +1,14 @@
+Prim()
+	S = new empty set
+	for i = 1 to n
+		d[i] = inf
+	while S.size() < n
+		x = inf
+		v = -1
+		for each i in V - S // V is the set of vertices
+			if x >= d[v]
+				then x = d[v], v = i
+		d[v] = 0
+		S.insert(v)
+		for each u in adj[v]
+			do d[u] = min(d[u], w(v,u))
